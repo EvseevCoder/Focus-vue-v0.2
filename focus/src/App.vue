@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import Timer from "./components/Timer.vue";
+import Round from './components/Round.vue'
 
 const workmin = ref(0);
 const worksec = ref(0);
@@ -40,7 +41,9 @@ const repeatValue = computed(() => {
     </div>
     <input v-model.number="repeat" type="number" />
   </div>
-  <Timer :workTime="workTime" :freeTime="freeTime" :times="repeatValue" />
+  <!-- <Timer :workTime="workTime" :freeTime="freeTime" :times="repeatValue" /> -->
+  <Round/>
+  <Round class="Round"/>
 </template>
 
 <style scoped lang="sass">
@@ -59,4 +62,8 @@ h3
 input
   width: 50px
   font-size: 20px
+
+.Round:nth-child(1)
+  margin-bottom: 50px
+  
 </style>
