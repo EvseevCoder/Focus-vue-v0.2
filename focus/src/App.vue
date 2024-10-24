@@ -1,67 +1,17 @@
 <script setup>
     import { ref, computed } from 'vue';
-    import Timer from './components/Timer.vue';
+    import Timer from './components/newTimer.vue';
     import Round from './components/Round.vue';
-
-    const workmin = ref(0);
-    const worksec = ref(0);
-    const freemin = ref(0);
-    const freesec = ref(0);
-    const repeat = ref(1);
-
-    const workTime = computed(() => {
-        return { minutes: workmin, seconds: worksec };
-    });
-    const freeTime = computed(() => {
-        return { minutes: freemin, seconds: freesec };
-    });
-
-    const repeatValue = computed(() => {
-        return repeat;
-    });
+    import MixinsTest from './components/MixinsTest.vue';
+    import StopwatchTest from './components/StopwatchTest.vue';
 </script>
 
 <template>
-    <div class="input-container">
-        <div class="time-item">
-            <p>Время работы</p>
-            <div class="time-input">
-                <input
-                    v-model.number="workmin"
-                    type="number"
-                />
-                :
-                <input
-                    v-model.number="worksec"
-                    type="number"
-                />
-            </div>
-        </div>
-        <div class="time-item">
-            <p>Время отдыха</p>
-            <div class="time-input">
-                <input
-                    v-model.number="freemin"
-                    type="number"
-                />
-                :
-                <input
-                    v-model.number="freesec"
-                    type="number"
-                />
-            </div>
-        </div>
-        <input
-            v-model.number="repeat"
-            type="number"
-        />
+    <div>
+        <Timer />
+
+        <StopwatchTest />
     </div>
-    <Timer
-        :workTime="workTime"
-        :freeTime="freeTime"
-        :times="repeatValue"
-    />
-    <Round />
 </template>
 
 <style scoped lang="sass">

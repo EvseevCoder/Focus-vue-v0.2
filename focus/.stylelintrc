@@ -3,7 +3,8 @@
     "overrides": [
         {
             "files": [
-                "**/*.vue"
+                "**/*.vue",
+                "**/*.js"
             ],
             "customSyntax": "postcss-html"
         }

@@ -1,0 +1,16 @@
+@import "mixins.scss";
+@import "font/text.scss";
+@import "adaptive.scss";
+@import "reset.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
